@@ -1,26 +1,3 @@
-# shell_samples
-
-shell脚本示例
-
-`cat run1.sh`
-
-```bash
-#!/bin/bash
-
-# w=1280
-# h=720
-
-# 同时启动，分号：顺序地独立执行各条命令，不管是否失败
-python snapshots.py --video_device 0 --prefix test0 --width ${w} --height ${h} ;
-python snapshots.py --video_device 1 --prefix test0 --width ${w} --height ${h} ;
-python snapshots.py --video_device 2 --prefix test0 --width ${w} --height ${h} ;
-python snapshots.py --video_device 3 --prefix test0 --width ${w} --height ${h}
-
-```
-
-`cat run2.sh`
-
-```bash
 #!/bin/bash
 
 source ~/catkin_csi_camera/devel/setup.bash
@@ -33,5 +10,4 @@ sleep 2s &&
 roslaunch jetson_csi_cam jetson_csi_cam.launch camera_id:=0 width:=1280 height:=720 ;
 sleep 2s &&
 roslaunch jetson_csi_cam jetson_csi_cam.launch camera_id:=0 width:=1280 height:=720
-```
 
